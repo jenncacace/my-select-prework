@@ -1,11 +1,10 @@
 def my_select(collection)
-  if block.given? == false 
-    puts "Please enter an array"
-  elsif 
+  if block.given? 
   i = 0 
+  new_array = []
   while i < collection.length 
-    yield array[i]
+    new_array << collection [i] if yield(collection[i]) == true 
     i += 1 
   end 
-  collection 
+  new_array 
 end
